@@ -28,7 +28,8 @@ export default function Country(){
     useEffect(() => {
         fetch(API)
         .then((res) => res.json())
-        .then((jsonData) => setData(jsonData));
+        .then((jsonData) => setData(jsonData))
+        .catch(error => console.error("Error fetching data: ", error));
     }, []);
 
     return (
